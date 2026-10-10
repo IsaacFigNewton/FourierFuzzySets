@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fourier_fuzzy_sets"
+version = "0.1.0"
+description = "Implementation from my paper"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Isaac Rudnick"}
+]
+keywords = ["nlp", "fuzzy-logic"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "tensorflow>=2.10.0",
+    "tf-keras>=2.10.0",
+    "numpy>=1.23.0",
+    "scikit-learn",
+    "umap-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "isort>=5.0.0",
+    "mypy>=0.990",
+    "flake8>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/IsaacFigNewton/FourierFuzzySets"
+Repository = "https://github.com/IsaacFigNewton/FourierFuzzySets"
+Issues = "https://github.com/IsaacFigNewton/FourierFuzzySets/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["fourier_fuzzy_sets*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
